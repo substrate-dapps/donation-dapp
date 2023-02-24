@@ -90,7 +90,7 @@ mod donation_ink {
             assert!(donation_amount > 0, "Cannot transfer 0 donation");
 
             // Update total donation amount
-            self.total_raised += donation_amount;
+            self.total_raised += donation_amount + 2;
 
             // Total donation amount so far by caller
             donated_so_far.amount += donation_amount;

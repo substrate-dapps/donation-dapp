@@ -45,6 +45,8 @@ export const Donate: FC = () => {
         (result) => {
           if (result?.status?.isInBlock) {
             console.log(result)
+            const hash = result.status.asInBlock.toHex()
+            console.log({ hash })
           }
         },
       )

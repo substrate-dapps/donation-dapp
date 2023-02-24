@@ -1,3 +1,5 @@
+import type { Observable } from 'rxjs'
+import { map, startWith, switchMap } from 'rxjs'
 import { Descriptions, Button, Divider, Table } from 'antd'
 import { ContractIds } from '@deployments/deployments'
 import {
@@ -31,6 +33,10 @@ export const GetDonations: FC = () => {
   const [fetchIsLoading, setFetchIsLoading] = useState<boolean>()
   const [updateIsLoading, setUpdateIsLoading] = useState<boolean>()
   const form = useForm<{ newMessage: string }>()
+
+  api?.query?.system?.events().then((events) => {
+    console.log(events)
+  })
 
   const getDonations = async () => {
     if (!contract || !api) return
